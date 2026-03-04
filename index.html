@@ -1,274 +1,262 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Swagh | Career Acceleration Platform</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+<title>Swagh | Find Matching Jobs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .hero {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-    }
+<style>
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: auto;
-      opacity: 0.9;
-    }
+.hero{
+text-align:center;
+padding:90px 20px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
 
-    .cta-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 35px;
-      background: white;
-      color: #2563eb;
-      font-weight: 600;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-size: 16px;
-    }
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
 
-    .cta-btn:hover {
-      background: #f1f5f9;
-      transform: scale(1.05);
-    }
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+opacity:.9;
+}
 
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-      background: #0f172a;
-    }
+.cta{
+margin-top:30px;
+display:inline-block;
+background:white;
+color:#2563eb;
+padding:15px 32px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
 
-    .section h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
+.section{
+padding:80px 20px;
+text-align:center;
+}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.section h2{
+font-size:32px;
+margin-bottom:40px;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 15px;
-      transition: 0.3s;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-      background: #334155;
-    }
+.card{
+background:#1e293b;
+padding:28px;
+border-radius:12px;
+}
 
-    .card h3 {
-      margin-bottom: 15px;
-      color: #60a5fa;
-    }
+.card h3{
+margin-bottom:10px;
+color:#60a5fa;
+}
 
-    .pricing {
-      background: linear-gradient(135deg, #1e293b, #111827);
-      padding: 80px 20px;
-      text-align: center;
-    }
+.price{
+font-size:56px;
+font-weight:bold;
+margin-bottom:10px;
+}
 
-    .price-box {
-      background: white;
-      color: #111;
-      display: inline-block;
-      padding: 50px;
-      border-radius: 20px;
-      max-width: 400px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-    }
+.price-box{
+background:white;
+color:#111;
+display:inline-block;
+padding:40px;
+border-radius:20px;
+max-width:400px;
+}
 
-    .price-box h3 {
-      margin-bottom: 10px;
-    }
+.small{
+font-size:14px;
+opacity:.7;
+}
 
-    .price {
-      font-size: 48px;
-      font-weight: 700;
-      color: #2563eb;
-      margin: 20px 0;
-    }
+.faq{
+max-width:700px;
+margin:auto;
+text-align:left;
+}
 
-    .small {
-      font-size: 14px;
-      opacity: 0.6;
-    }
+.faq h4{
+margin-top:25px;
+}
 
-    footer {
-      padding: 30px;
-      text-align: center;
-      background: #0f172a;
-      opacity: 0.6;
-      font-size: 14px;
-    }
-  </style>
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+opacity:.6;
+}
+
+.floating{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#ff6159;
+padding:14px 24px;
+border-radius:40px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+text-decoration:none;
+color:white;
+}
+
+</style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <h1>Accelerate Your Career with us</h1>
-    <p>
-      Our expert team connects you with high-quality, relevant job opportunities —
-      so you stop wasting time and start getting interviews.
-      Receive carefully selected updates directly on your email.
-    </p>
-    <a class="cta-btn" href="https://waghshudip.app.n8n.cloud/form/044f2fd2-7557-4015-b7d6-99446a5b6f85">
-      Get Started for ₹99 →
-    </a>
-  </section>
+<section class="hero">
 
-  <section class="section">
-    <h2>Why Professionals Choose Swagh</h2>
-    <div class="features">
-      <div class="card">
-        <h3>Curated Job Matches</h3>
-        <p>Our team carefully selects roles aligned with your experience and goals.</p>
-      </div>
-      <div class="card">
-        <h3>Email Updates</h3>
-        <p>Receive relevant job opportunities directly in your inbox.</p>
-      </div>
-      <div class="card">
-        <h3>Faster Applications</h3>
-        <p>Apply to multiple relevant roles quickly without repetitive effort.</p>
-      </div>
-      <div class="card">
-        <h3>Serious Opportunities Only</h3>
-        <p>No spam. Only carefully filtered, genuine openings.</p>
-      </div>
-    </div>
-  </section>
+<h1>Find Jobs That Match Your Profile</h1>
+
+<p>
+Submit your profile and we will find relevant job opportunities 
+that match your experience and preferred role.
+</p>
+
+<a class="cta" href="https://waghshudip.app.n8n.cloud/form/044f2fd2-7557-4015-b7d6-99446a5b6f85">
+Find My Matching Jobs – ₹99
+</a>
+
+<p style="margin-top:10px;font-size:14px">
+One-time ₹99 • No subscription • Delivered by email
+</p>
+
+</section>
+
 <section class="section">
-  <h2>What You Get for ₹99</h2>
 
-  <div class="features">
+<h2>What You Get for ₹99</h2>
 
-    <div class="card">
-      <h3>📌 Curated Job Matches</h3>
-      <p>Handpicked job opportunities based on your experience, preferred location, and career goals.</p>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <h3>📊 Strategic Fit Analysis</h3>
-      <p>We analyze how well your profile matches each role — highlighting strengths and gaps.</p>
-    </div>
-
-    <div class="card">
-      <h3>⭐ Job Rating</h3>
-      <p>Each opportunity is rated to help you focus on high-potential roles.</p>
-    </div>
-
-    <div class="card">
-      <h3>💡 Key Improvement Suggestions</h3>
-      <p>Actionable recommendations to improve your chances of selection.</p>
-    </div>
-
-    <div class="card">
-      <h3>✍ Customized Cover Letter</h3>
-      <p>Role-specific cover letter tailored to increase interview probability.</p>
-    </div>
-
-    <div class="card">
-      <h3>📧 Direct Email Updates</h3>
-      <p>Receive your personalized job opportunity report directly in your inbox.</p>
-    </div>
-
-  </div>
-</section>
-  <section class="pricing">
-  <h2>₹99 Job Matching Fee</h2>
-
-  <div class="price-box">
-    <div class="price">₹99</div>
-
-    <p>
-      We analyze your profile and send you matching job opportunities 
-      based on your experience and preferred location.
-    </p>
-
-    <p class="small">
-      ✔ One-time fee  
-      ✔ No subscription  
-      ✔ Direct email delivery  
-      ✔ Personalized job matching
-    </p>
-
-    <br>
-
-    <a class="cta-btn" href="/apply">
-      Start Job Matching →
-    </a>
-  </div>
-</section>
-<section class="section">
-  <h2>See What You Will Receive</h2>
-  <p style="max-width:700px;margin:auto;opacity:0.8;">
-    After activation, our team prepares a personalized job opportunity report 
-    tailored to your experience and preferred locations.
-  </p>
-
-  <br><br>
-
-  <a class="cta-btn" href="sample-report.html" target="_blank">
-    View Sample Job Report →
-  </a>
-</section>
-  <footer>
-    © 2026 Swagh. Built to Help You Grow.
-  </footer>
-<div class="floating-pay">
-  <a href="https://waghshudip.app.n8n.cloud/form/044f2fd2-7557-4015-b7d6-99446a5b6f85">
-    Unlock My Job Matches – ₹99
-  </a>
+<div class="card">
+<h3>Curated Job Matches</h3>
+<p>Relevant job opportunities selected based on your profile.</p>
 </div>
 
-<style>
-.floating-pay {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 999;
-}
+<div class="card">
+<h3>Strategic Fit Analysis</h3>
+<p>We evaluate how well your experience matches the role.</p>
+</div>
 
-.floating-pay a {
-  background: #ff6159;
-  color: white;
-  padding: 14px 20px;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-  font-size: 14px;
-  transition: 0.2s;
-}
+<div class="card">
+<h3>Personalized Job Report</h3>
+<p>You receive a structured job opportunity report on email.</p>
+</div>
 
-.floating-pay a:hover {
-  transform: scale(1.05);
-  background: #e5534b;
-}
-</style>
+<div class="card">
+<h3>Direct Application Links</h3>
+<p>Quick links to apply directly to the company.</p>
+</div>
+
+<div class="card">
+<h3>Recommendations</h3>
+<p>Suggestions to improve your chances for the role.</p>
+</div>
+
+<div class="card">
+<h3>Email Delivery</h3>
+<p>Your job report is delivered directly to your inbox.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>See an Example Job Report</h2>
+
+<p>Preview the type of report you will receive.</p>
+
+<br>
+
+<a class="cta" href="/sample-report.html">
+View Sample Report
+</a>
+
+</section>
+
+<section class="section">
+
+<h2>Simple Pricing</h2>
+
+<div class="price-box">
+
+<div class="price">₹99</div>
+
+<p>
+We charge a small one-time fee to analyze your profile
+and find matching job opportunities.
+</p>
+
+<p class="small">
+No subscription • No hidden charges
+</p>
+
+<br>
+
+<a class="cta" href="https://waghshudip.app.n8n.cloud/form/044f2fd2-7557-4015-b7d6-99446a5b6f85">
+Find My Matching Jobs – ₹99
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<h4>Why do you charge ₹99?</h4>
+<p>To cover the effort of analyzing profiles and finding relevant job matches.</p>
+
+<h4>Do you guarantee a job?</h4>
+<p>No. We help you discover relevant opportunities so you can apply faster.</p>
+
+<h4>How will I receive the results?</h4>
+<p>Your personalized job opportunity report will be sent to your email.</p>
+
+</div>
+
+</section>
+
+<footer>
+
+Swagh helps candidates discover relevant job opportunities.  
+We do not guarantee job placement.
+
+</footer>
+
+<a class="floating"
+href="https://waghshudip.app.n8n.cloud/form/044f2fd2-7557-4015-b7d6-99446a5b6f85">
+Find My Matching Jobs – ₹99
+</a>
+
 </body>
 </html>
