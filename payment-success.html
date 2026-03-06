@@ -42,6 +42,15 @@ opacity:.8;
 line-height:1.6;
 }
 
+.payment-box{
+margin-top:20px;
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+font-size:14px;
+color:#ddd;
+}
+
 .button{
 display:inline-block;
 margin-top:25px;
@@ -78,24 +87,30 @@ Your job profile will now be reviewed and we will identify relevant job opportun
 You will receive your personalized job opportunity report on your email shortly.
 </p>
 
+<div class="payment-box" id="paymentDetails">
+Loading payment details...
+</div>
+
 <a class="button" href="https://jobs.swagh.in/">
 Back to Home
 </a>
 
 </div>
-<div id="paymentDetails" style="margin-top:20px;color:#ddd;"></div>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
 
-const paymentId = params.get("razorpay_payment_id");
-const status = params.get("razorpay_payment_link_status");
+const paymentId = params.get("razorpay_payment_id") || "N/A";
+const status = params.get("razorpay_payment_link_status") || "Paid";
 
 document.getElementById("paymentDetails").innerHTML = `
-<p><strong>Payment ID:</strong> ${paymentId}</p>
-<p><strong>Status:</strong> ${status}</p>
+<strong>Payment Details</strong><br><br>
+Payment ID: ${paymentId}<br>
+Status: ${status}
 `;
-</script>
-</body>
 
+</script>
+
+</body>
 </html>
