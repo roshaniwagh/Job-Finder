@@ -83,7 +83,19 @@ Back to Home
 </a>
 
 </div>
+<div id="paymentDetails" style="margin-top:20px;color:#ddd;"></div>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const paymentId = params.get("razorpay_payment_id");
+const status = params.get("razorpay_payment_link_status");
+
+document.getElementById("paymentDetails").innerHTML = `
+<p><strong>Payment ID:</strong> ${paymentId}</p>
+<p><strong>Status:</strong> ${status}</p>
+`;
+</script>
 </body>
 
 </html>
