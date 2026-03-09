@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Job Finder</title>
+<title>Find Matching Jobs</title>
 
 <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
 
@@ -10,59 +11,46 @@
 
 body{
 margin:0;
-font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
 background:#071a2f;
 color:white;
 }
 
-/* gradient bar */
-
 .topbar{
-
-background: linear-gradient(90deg,#4f6ef7,#8e44ff);
+background:linear-gradient(90deg,#4f6ef7,#8e44ff);
 text-align:center;
 padding:14px;
 font-size:14px;
-
 }
 
 .container{
-
 max-width:520px;
 margin:60px auto;
 background:#14263f;
 padding:35px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
-
 }
 
 h2{
-
 text-align:center;
 margin-bottom:10px;
-
 }
 
 .note{
-
 text-align:center;
 color:#9bb4d1;
 font-size:13px;
 margin-bottom:25px;
-
 }
 
 label{
-
 font-weight:600;
 display:block;
 margin-top:16px;
-
 }
 
 input,select{
-
 width:100%;
 padding:12px;
 border-radius:6px;
@@ -71,7 +59,6 @@ background:#0e1d34;
 color:white;
 margin-top:6px;
 font-size:14px;
-
 }
 
 input::placeholder{
@@ -79,30 +66,14 @@ color:#7c95b4;
 }
 
 input:focus,select:focus{
-
 outline:none;
 border-color:#4f6ef7;
-
 }
-
-.ts-control{
-
-background:#0e1d34;
-border:1px solid #2c3f5f;
-
-}
-
-.ts-control input{
-color:white;
-}
-
-/* button */
 
 button{
-
 width:100%;
 padding:15px;
-margin-top:28px;
+margin-top:25px;
 border:none;
 border-radius:40px;
 background:#ff6b5a;
@@ -110,32 +81,42 @@ color:white;
 font-size:16px;
 font-weight:600;
 cursor:pointer;
-
 }
 
 button:hover{
-
 background:#ff4e3b;
-
 }
 
 .payment{
-
 text-align:center;
-margin-top:16px;
-font-size:13px;
+margin-top:20px;
 color:#9bb4d1;
+font-size:13px;
+}
 
+.payment-icons{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:14px;
+margin-bottom:10px;
+}
+
+.payment-icons img{
+height:28px;
+}
+
+.payment-icons img:first-child{
+height:22px;
 }
 
 .error{
-
 color:#ff8080;
 font-size:12px;
-
 }
 
 </style>
+
 </head>
 
 <body>
@@ -154,18 +135,18 @@ Upload your CV and our AI will find relevant opportunities.
 
 <form id="jobForm">
 
-<label>Your Name *</label>
-<input type="text" required placeholder="Sundar Pichai">
+<label>Your Name *</label> <input type="text" name="name" required placeholder="Sundar Pichai">
 
-<label>Email *</label>
-<input type="email"
+<label>Email *</label> <input 
+type="email"
+name="email"
 required
-pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+pattern="^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
 placeholder="youare@awesome.com">
 
 <label>Profile you are looking for *</label>
 
-<select id="profiles" multiple required>
+<select id="profiles" name="profile" multiple required>
 
 <option>QA Manager</option>
 <option>QA Lead</option>
@@ -177,19 +158,26 @@ placeholder="youare@awesome.com">
 
 </select>
 
-<label>CV (PDF only) *</label>
-<input type="file" id="cvFile" accept="application/pdf" required>
+<label>CV (PDF only) *</label> <input type="file" name="cv" id="cvFile" accept="application/pdf" required>
+
 <div id="fileError" class="error"></div>
 
-<label>Years of Experience *</label>
-<input type="number" step="0.1" min="0" required placeholder="7.5">
+<label>Years of Experience *</label> <input 
+type="number"
+name="experience"
+step="0.1"
+min="0"
+required
+placeholder="7.5">
 
-<label>LinkedIn Profile</label>
-<input type="url" placeholder="https://linkedin.com/in/yourprofile">
+<label>LinkedIn Profile</label> <input 
+type="url"
+name="linkedin"
+placeholder="https://linkedin.com/in/yourprofile">
 
 <label>Preferred Location *</label>
 
-<select id="locations" multiple required>
+<select id="locations" name="location" multiple required>
 
 <option>Pune</option>
 <option>Bangalore</option>
@@ -202,12 +190,24 @@ placeholder="youare@awesome.com">
 
 <div class="payment">
 
+<div class="payment-icons">
+
+<img src="https://cdn.worldvectorlogo.com/logos/razorpay.svg" alt="Razorpay">
+
+<img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+
+<img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard">
+
+<img src="https://img.icons8.com/color/48/upi.png" alt="UPI">
+
+</div>
+
 Secure payment via Razorpay<br>
 One-time ₹99 • No subscription
 
 </div>
 
-<button>
+<button id="submitBtn">
 Find My Matching Jobs – ₹99
 </button>
 
@@ -229,13 +229,36 @@ plugins:['remove_button'],
 create:true
 });
 
-document.getElementById("jobForm").addEventListener("submit",function(e){
+document.getElementById("jobForm").addEventListener("submit",async function(e){
+
+e.preventDefault();
 
 let file=document.getElementById("cvFile").files[0];
 
 if(file && file.type !== "application/pdf"){
-e.preventDefault();
 document.getElementById("fileError").innerText="Only PDF files allowed.";
+return;
+}
+
+let button=document.getElementById("submitBtn");
+
+button.innerText="Submitting...";
+button.disabled=true;
+
+let formData=new FormData(this);
+
+let response=await fetch("https://waghshudip.app.n8n.cloud/webhook-test/job-form",{
+method:"POST",
+body:formData
+});
+
+if(response.ok){
+alert("Your request has been submitted!");
+location.reload();
+}else{
+alert("Something went wrong.");
+button.disabled=false;
+button.innerText="Find My Matching Jobs – ₹99";
 }
 
 });
