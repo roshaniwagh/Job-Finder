@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
+body {
+display:none;
+}
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
@@ -317,7 +319,13 @@ We do not guarantee job placement.
 href="https://apply.swagh.in/">
 Get Job Matches – Free
 </a>
-
+<script>
+setTimeout(function() {
+  if(document.body.innerText.includes("Problem loading form")){
+      window.location.href = "https://swagh.in";
+  }
+}, 1000);
+</script>
 
 </body>
 </html>
