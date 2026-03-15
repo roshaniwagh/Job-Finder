@@ -319,12 +319,11 @@ Contact us at <a href="mailto:support@swagh.in">support@swagh.in</a>
 <a class="floating" href="https://jobs.swagh.in/currency">
 Find My Matching Jobs – <span id="priceFloat">...</span>
 </a>
-
 <script>
 
 async function setPricing(){
 
-let price="$6";
+let price="₹99";   // default for India
 
 try{
 
@@ -333,7 +332,7 @@ const data = await res.json();
 
 const country=data.country_code;
 
-console.log("Detected:",country);
+console.log("Detected country:",country);
 
 if(country==="IN"){
 price="₹99";
@@ -347,12 +346,22 @@ else if(country==="AE"){
 price="20 AED";
 }
 
-else if(["FR","DE","IT","ES","NL","BE","SE","NO","DK","FI"].includes(country)){
+else if([
+"FR","DE","IT","ES","NL","BE","SE","NO","DK","FI",
+"PL","PT","IE","AT","CH","CZ","HU","RO","BG"
+].includes(country)){
 price="€6";
 }
 
+else{
+price="$6";
+}
+
 }catch(e){
+
 console.log("Geo detection failed");
+price="₹99";   // fallback
+
 }
 
 const ids=["price","priceSmall","priceLarge","priceButton","priceFloat"];
