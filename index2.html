@@ -320,19 +320,40 @@ Contact us at <a href="mailto:support@swagh.in">support@swagh.in</a>
 Find My Matching Jobs – <span id="priceFloat">...</span>
 </a>
 
-
 <script>
 
-function setPricing(){
-
-const country = window.USER_COUNTRY || "US";
+async function setPricing(){
 
 let price="$6";
 
-if(country==="IN") price="₹99";
-else if(country==="GB") price="£5";
-else if(country==="AE") price="20 AED";
-else if(["FR","DE","IT","ES","NL","BE"].includes(country)) price="€6";
+try{
+
+const res = await fetch("https://ipwho.is/");
+const data = await res.json();
+
+const country=data.country_code;
+
+console.log("Detected:",country);
+
+if(country==="IN"){
+price="₹99";
+}
+
+else if(country==="GB"){
+price="£5";
+}
+
+else if(country==="AE"){
+price="20 AED";
+}
+
+else if(["FR","DE","IT","ES","NL","BE","SE","NO","DK","FI"].includes(country)){
+price="€6";
+}
+
+}catch(e){
+console.log("Geo detection failed");
+}
 
 const ids=["price","priceSmall","priceLarge","priceButton","priceFloat"];
 
