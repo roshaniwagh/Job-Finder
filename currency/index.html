@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SWAGH Job Finder</title>
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
 background:#0f172a;
+padding:20px;
+}
+
+.container{
 display:flex;
 justify-content:center;
-padding:40px;
+align-items:center;
+min-height:100vh;
 }
 
 .form-box{
 background:white;
-padding:40px;
-border-radius:10px;
-width:420px;
+padding:35px;
+border-radius:12px;
+width:100%;
+max-width:420px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 h2{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:25px;
+}
+
+label{
+font-size:14px;
+font-weight:600;
 }
 
 input{
@@ -34,6 +52,7 @@ margin-top:6px;
 margin-bottom:18px;
 border-radius:6px;
 border:1px solid #ddd;
+font-size:14px;
 }
 
 button{
@@ -43,15 +62,37 @@ background:#ff6159;
 border:none;
 color:white;
 font-weight:bold;
-border-radius:6px;
+border-radius:8px;
 font-size:16px;
 cursor:pointer;
+transition:.2s;
+}
+
+button:hover{
+background:#e24d45;
+}
+
+/* Mobile spacing */
+
+@media (max-width:480px){
+
+.form-box{
+padding:25px;
+}
+
+h2{
+font-size:20px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
+
+<div class="container">
 
 <div class="form-box">
 
@@ -83,7 +124,7 @@ enctype="multipart/form-data">
 <label>Preferred Location *</label>
 <input type="text" name="Preferred Location" placeholder="Pune, Mumbai, UAE">
 
-<!-- Hidden Country Field -->
+<!-- Country Detection -->
 <input type="hidden" name="country_code" id="country_code">
 
 <button type="submit">
@@ -93,6 +134,9 @@ Find Matching Jobs
 </form>
 
 </div>
+
+</div>
+
 
 <script>
 
