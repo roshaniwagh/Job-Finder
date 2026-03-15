@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Swagh | Find Matching Jobs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+.hero{
+text-align:center;
+padding:90px 20px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+opacity:.9;
+}
+
+.cta{
+margin-top:30px;
+display:inline-block;
+background:white;
+color:#2563eb;
+padding:15px 32px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#1e293b;
+padding:28px;
+border-radius:12px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#60a5fa;
+}
+
+.price{
+font-size:56px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.price-box{
+background:white;
+color:#111;
+display:inline-block;
+padding:40px;
+border-radius:20px;
+max-width:400px;
+}
+
+.small{
+font-size:14px;
+opacity:.7;
+}
+
+.faq{
+max-width:700px;
+margin:auto;
+text-align:left;
+}
+
+.faq h4{
+margin:10px 0 2px 0;
+line-height:1.3;
+}
+
+.faq p{
+margin:0 0 25px 0;
+line-height:1.4;
+opacity:.85;
+}
+
+.footer{
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+opacity:.7;
+max-width:600px;
+margin:auto;
+margin-bottom:120px;
+}
+
+.footer-left{
+display:block;
+margin-bottom:12px;
+}
+
+.footer a{
+color:#60a5fa;
+text-decoration:none;
+}
+
+.floating{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#ff6159;
+padding:14px 24px;
+border-radius:40px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+text-decoration:none;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div style="margin-bottom:25px">
+
+<h1 style="margin:0;font-size:40px;letter-spacing:2px;">SWAGH</h1>
+
+<div style="font-size:14px;opacity:.9;margin-top:4px;">
+Smart Work And Growth Hub
+</div>
+
+<div style="font-size:18px;font-weight:500;margin-top:6px;">
+AI-Powered Job Matching
+</div>
+
+</div>
+
+<h1>Find Jobs That Match Your Profile</h1>
+
+<p>
+Submit your profile and we will find relevant job opportunities 
+that match your experience and preferred role.
+</p>
+
+<a class="cta" href="https://apply.swagh.in/">
+Find My Matching Jobs – <span id="price">₹99</span>
+</a>
+
+<p style="margin-top:10px;font-size:14px">
+One-time <span id="priceSmall">₹99</span> • No subscription • Delivered by email
+</p>
+
+<p style="margin-top:10px;font-size:14px">
+Trusted by 150+ job seekers
+</p>
+
+</section>
+
+
+<section class="section">
+
+<h2>What You Get</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>AI-Curated Job Matches</h3>
+<p>Relevant job opportunities selected based on your profile.</p>
+</div>
+
+<div class="card">
+<h3>Strategic Fit Analysis</h3>
+<p>We evaluate how well your experience matches the role.</p>
+</div>
+
+<div class="card">
+<h3>Personalized Job Report</h3>
+<p>You receive a structured job opportunity report on email.</p>
+</div>
+
+<div class="card">
+<h3>Direct Application Links</h3>
+<p>Quick links to apply directly to the company.</p>
+</div>
+
+<div class="card">
+<h3>Recommendations</h3>
+<p>Suggestions to improve your chances for the role.</p>
+</div>
+
+<div class="card">
+<h3>Email Delivery</h3>
+<p>Your job report is delivered directly to your inbox.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>See an Example Job Report</h2>
+
+<p>Preview the type of report you will receive.</p>
+
+<br>
+
+<a class="cta" href="/sample-report.html">
+View Sample Report
+</a>
+
+</section>
+
+
+<section class="section">
+
+<h2>Simple Pricing</h2>
+
+<div class="price-box">
+
+<div class="price" id="priceLarge">₹99</div>
+
+<p>
+We charge a small one-time fee to analyze your profile
+and find matching job opportunities.
+</p>
+
+<p style="font-size:15px;margin-top:5px;">
+Typical report includes <strong>8–15 relevant job opportunities</strong>.
+</p>
+
+<p class="small">
+No subscription • No hidden charges
+</p>
+
+<br>
+
+<a class="cta" href="https://apply.swagh.in/">
+Find My Matching Jobs – <span id="priceButton">₹99</span>
+</a>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq">
+
+<h4>Why do you charge?</h4>
+<p>
+We charge a small one-time fee to analyze your profile, evaluate role fit,
+and identify relevant job opportunities.
+</p>
+
+<h4>Do you guarantee a job?</h4>
+<p>No. We help you discover relevant opportunities so you can apply faster.</p>
+
+<h4>How will I receive the results?</h4>
+<p>Your personalized job opportunity report will be sent to your email.</p>
+
+<h4>Are we a recruitment firm?</h4> 
+<p>
+Swagh is not a recruitment agency. We are a job intelligence platform that
+finds curated job matches for you.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="footer">
+
+<div class="footer-left">
+We help candidates discover relevant job opportunities.<br>
+We do not guarantee job placement.
+</div>
+
+<div>
+Contact us at <a href="mailto:support@swagh.in">support@swagh.in</a>
+</div>
+
+</div>
+
+
+<a class="floating" href="https://apply.swagh.in/">
+Find My Matching Jobs – <span id="priceFloat">₹99</span>
+</a>
+
+
+
+<script>
+
+async function setPricing(){
+
+try{
+
+const res = await fetch("https://ipapi.co/json/");
+const data = await res.json();
+
+let price="₹99";
+
+if(data.country_code==="GB"){
+price="£5";
+}
+
+else if(data.country_code==="AE"){
+price="20 AED";
+}
+
+else if(data.country_code==="US"){
+price="$6";
+}
+
+else if(data.country_code==="IN"){
+price="₹99";
+}
+
+document.getElementById("price").innerText=price;
+document.getElementById("priceSmall").innerText=price;
+document.getElementById("priceLarge").innerText=price;
+document.getElementById("priceButton").innerText=price;
+document.getElementById("priceFloat").innerText=price;
+
+}catch(e){
+console.log("Pricing detection failed");
+}
+
+}
+
+setPricing();
+
+</script>
+
+</body>
+</html>
