@@ -324,24 +324,21 @@ Find My Matching Jobs – <span id="priceFloat">...</span>
 
 <script>
 
-async function setPricing(){
+function setPricing(){
 
-try{
-
-const res = await fetch("https://ipapi.co/json/");
-const data = await res.json();
+const country = window.USER_COUNTRY || "US";
 
 let price="₹99";
 
-if(data.country_code==="GB"){
+if(country==="GB"){
 price="£5";
 }
 
-else if(data.country_code==="AE"){
+else if(country==="AE"){
 price="20 AED";
 }
 
-else if(data.country_code==="US"){
+else if(country==="US"){
 price="$6";
 }
 
@@ -352,22 +349,10 @@ const el=document.getElementById(id);
 if(el) el.innerText=price;
 });
 
-}catch(e){
-
-const ids=["price","priceSmall","priceLarge","priceButton","priceFloat"];
-
-ids.forEach(id=>{
-const el=document.getElementById(id);
-if(el) el.innerText="₹99";
-});
-
-}
-
 }
 
 setPricing();
 
 </script>
-
 </body>
 </html>
