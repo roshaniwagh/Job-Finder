@@ -1,10 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SWAGH Job Finder</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:10px;
+width:420px;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:18px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#ff6159;
+border:none;
+color:white;
+font-weight:bold;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>SWAGH Job Finder</h2>
+
 <form action="https://waghshudip.app.n8n.cloud/webhook-test/form-sumit
-" method="POST" enctype="multipart/form-data">
+"
+method="POST"
+enctype="multipart/form-data">
 
-<input type="text" name="name">
-<input type="email" name="email">
-<input type="file" name="cv">
+<label>Your Name *</label>
+<input type="text" name="Your Name" required>
 
-<button type="submit">Submit</button>
+<label>Email Id *</label>
+<input type="email" name="Email Id" required>
+
+<label>Profile you are looking for *</label>
+<input type="text" name="Profile you are looking for?" placeholder="QA Lead, QA Manager">
+
+<label>CV *</label>
+<input type="file" name="CV" required>
+
+<label>Years of Experience *</label>
+<input type="number" name="Years of Experience" required>
+
+<label>LinkedIn Profile</label>
+<input type="text" name="LinkedIn Profile">
+
+<label>Preferred Location *</label>
+<input type="text" name="Preferred Location" placeholder="Pune, Mumbai, UAE">
+
+<!-- Hidden Country Field -->
+<input type="hidden" name="country_code" id="country_code">
+
+<button type="submit">
+Find Matching Jobs
+</button>
 
 </form>
+
+</div>
+
+<script>
+
+fetch("https://ipapi.co/json/")
+.then(res=>res.json())
+.then(data=>{
+document.getElementById("country_code").value=data.country_code;
+});
+
+</script>
+
+</body>
+</html>
