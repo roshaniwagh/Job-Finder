@@ -323,16 +323,23 @@ Find My Matching Jobs – <span id="priceFloat">...</span>
 
 async function setPricing(){
 
-let price="₹99";   // default for India
+let price="₹99";
 
 try{
 
-const res = await fetch("https://ipwho.is/");
+const res = await fetch("https://ipapi.co/json/");
 const data = await res.json();
 
 const country=data.country_code;
 
 console.log("Detected country:",country);
+
+const europe=[
+"FR","DE","IT","ES","NL","BE","SE","NO","DK","FI",
+"PL","PT","IE","AT","CH","CZ","HU","RO","BG"
+];
+
+const middleEast=["AE","SA","QA","KW","OM","BH"];
 
 if(country==="IN"){
 price="₹99";
@@ -342,15 +349,12 @@ else if(country==="GB"){
 price="£5";
 }
 
-else if(country==="AE"){
-price="20 AED";
+else if(europe.includes(country)){
+price="€6";
 }
 
-else if([
-"FR","DE","IT","ES","NL","BE","SE","NO","DK","FI",
-"PL","PT","IE","AT","CH","CZ","HU","RO","BG"
-].includes(country)){
-price="€6";
+else if(middleEast.includes(country)){
+price="20 AED";
 }
 
 else{
@@ -360,7 +364,7 @@ price="$6";
 }catch(e){
 
 console.log("Geo detection failed");
-price="₹99";   // fallback
+price="₹99";
 
 }
 
