@@ -16,28 +16,27 @@ body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#0f172a;
-padding:20px;
+padding:30px 15px;
 }
 
 .container{
 display:flex;
 justify-content:center;
-align-items:center;
-min-height:100vh;
 }
 
 .form-box{
 background:white;
-padding:35px;
-border-radius:12px;
+padding:30px;
+border-radius:16px;
 width:100%;
 max-width:420px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
 }
 
 h2{
 text-align:center;
-margin-bottom:25px;
+margin-bottom:30px;
+font-size:26px;
 }
 
 label{
@@ -47,22 +46,22 @@ font-weight:600;
 
 input{
 width:100%;
-padding:12px;
+padding:14px;
 margin-top:6px;
-margin-bottom:18px;
-border-radius:6px;
+margin-bottom:20px;
+border-radius:8px;
 border:1px solid #ddd;
-font-size:14px;
+font-size:15px;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:16px;
 background:#ff6159;
 border:none;
 color:white;
 font-weight:bold;
-border-radius:8px;
+border-radius:10px;
 font-size:16px;
 cursor:pointer;
 transition:.2s;
@@ -72,20 +71,21 @@ button:hover{
 background:#e24d45;
 }
 
-/* Mobile spacing */
-
 @media (max-width:480px){
 
+body{
+padding:25px 12px;
+}
+
 .form-box{
-padding:25px;
+padding:24px;
 }
 
 h2{
-font-size:20px;
+font-size:22px;
 }
 
 }
-
 </style>
 
 </head>
