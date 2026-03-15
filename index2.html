@@ -328,19 +328,60 @@ function setPricing(){
 
 const country = window.USER_COUNTRY || "US";
 
-let price="₹99";
+let price="$6";
 
-if(country==="GB"){
+/* India */
+const india = ["IN"];
+
+/* UK */
+const uk = ["GB"];
+
+/* Europe */
+const europe = [
+"FR","DE","IT","ES","NL","BE","CH","SE","NO","DK","FI","IE",
+"AT","PL","PT","GR","CZ","HU","RO","BG","HR","SI","SK","EE",
+"LV","LT","LU","MT","CY"
+];
+
+/* Americas */
+const americas = [
+"US","CA","MX","BR","AR","CL","CO","PE","UY","VE","CR","PA"
+];
+
+/* Middle East */
+const middleEast = [
+"AE","SA","QA","KW","OM","BH","IL","JO"
+];
+
+
+/* Pricing logic */
+
+if(india.includes(country)){
+price="₹99";
+}
+
+else if(uk.includes(country)){
 price="£5";
 }
 
-else if(country==="AE"){
+else if(europe.includes(country)){
+price="€6";
+}
+
+else if(americas.includes(country)){
+price="$6";
+}
+
+else if(middleEast.includes(country)){
 price="20 AED";
 }
 
-else if(country==="US"){
+else{
 price="$6";
 }
+
+
+/* Apply price to page */
 
 const ids=["price","priceSmall","priceLarge","priceButton","priceFloat"];
 
